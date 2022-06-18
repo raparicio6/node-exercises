@@ -2,7 +2,7 @@ import { Delays, greeter } from '../src/main.js';
 
 describe('greeter function', () => {
   const name = 'John';
-  let hello: string;
+  let hello: string | undefined;
 
   let timeoutSpy: jest.SpyInstance;
 
@@ -16,7 +16,7 @@ describe('greeter function', () => {
     jest.useFakeTimers();
     timeoutSpy = jest.spyOn(global, 'setTimeout');
 
-    const p: Promise<string> = greeter(name);
+    const p: Promise<string | undefined> = greeter(name);
     jest.runOnlyPendingTimers();
     hello = await p;
   });
@@ -29,10 +29,7 @@ describe('greeter function', () => {
   // Assert if setTimeout was called properly
   it('delays the greeting by 2 seconds', () => {
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(
-      expect.any(Function),
-      Delays.Long,
-    );
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), Delays.Long);
   });
 
   // Assert greeter result

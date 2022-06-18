@@ -10,13 +10,27 @@
     "sourceType": "module",
     "ecmaVersion": 2020
   },
-  "plugins": ["@typescript-eslint", "jest"],
+  "plugins": ["@typescript-eslint", "jest", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "prettier"
   ],
-  "rules": {}
+  "rules": {},
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      },
+      "typescript": { "alwaysTryTypes": true, "project": "./tsconfig.json" }
+    }
+  }
 }

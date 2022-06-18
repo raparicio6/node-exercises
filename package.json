@@ -1,7 +1,6 @@
 {
-  "name": "node-typescript-boilerplate",
-  "version": "0.0.0",
-  "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
+  "name": "node-exercises",
+  "version": "0.0.1",
   "type": "module",
   "engines": {
     "node": ">= 16.13 <17"
@@ -13,6 +12,7 @@
     "@typescript-eslint/parser": "~5.26",
     "eslint": "~8.16",
     "eslint-config-prettier": "~8.5",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "~26.2",
     "jest": "~28.1",
     "prettier": "~2.6",
@@ -29,13 +29,14 @@
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
+    "lint:fix": "eslint . --ext .ts --ext .mts --fix",
     "test": "jest --coverage",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "jest --watch"
   },
-  "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "eslint-import-resolver-typescript": "^2.7.1",
     "tslib": "~2.4"
   },
   "volta": {
