@@ -1,5 +1,4 @@
-const MAX_ERRORS_PER_MINUTE = 10;
-const MSECONDS_TO_WAIT_TO_NOTIFY_AGAIN = 60000;
+import { MAX_ERRORS_PER_MINUTE, MSECONDS_TO_WAIT_TO_NOTIFY_AGAIN } from './config.js';
 
 interface ErrorData {
   description: string;
@@ -7,7 +6,7 @@ interface ErrorData {
 }
 
 export class ErrorAlarm {
-  private static instance?: ErrorAlarm;
+  private static instance: ErrorAlarm | null = null;
   private errors: ErrorData[];
   private notificationWasSent: boolean;
 

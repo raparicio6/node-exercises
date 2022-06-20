@@ -1,0 +1,3 @@
+export const MAX_ERRORS_PER_MINUTE = 10;
+export const MSECONDS_TO_WAIT_TO_NOTIFY_AGAIN = 60000;
+export const MAX_ERRORS_TO_STORE = 5000;
