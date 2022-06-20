@@ -19,7 +19,7 @@ Nvm approach is preferred.
 
 Install dependencies by running `npm i`.  
 Build project with `npm run build`.  
-Run tests with `npm test`.  
+Run tests with `npm test`.
 
 ## Some available Scripts
 

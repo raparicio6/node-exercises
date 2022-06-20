@@ -61,4 +61,8 @@ export class ErrorAlarm {
   resetErrors() {
     this.errors = this.errors.slice((MAX_ERRORS_PER_MINUTE + 1) * -1);
   }
+
+  static removeInstance() {
+    this.instance = null;
+  }
 }
