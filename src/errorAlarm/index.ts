@@ -1,6 +1,6 @@
 import { ErrorAlarm } from './ErrorAlarm.js';
-
 import { MAX_ERRORS_TO_STORE } from './config.js';
+
 const logError = (error: string) => console.log(`Error ${error}`);
 
 const sendEmail = () => console.log('Sending email..');
